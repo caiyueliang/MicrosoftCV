@@ -68,10 +68,10 @@ public class test{
 
             if (entity != null) {
                 // Format and display the JSON response.
-                String jsonString = EntityUtils.toString(entity);
-                JSONObject json = new JSONObject(jsonString);
-                System.out.println("REST Response:\n");
-                System.out.println(json.toString(2));
+//                String jsonString = EntityUtils.toString(entity);
+//                JSONObject json = new JSONObject(jsonString);
+//                System.out.println("REST Response:\n");
+//                System.out.println(json.toString(2));
             }
         } catch (Exception e) {
             // Display error message.
@@ -108,7 +108,7 @@ public class test{
 			/*
 			 * 请求API的秘钥（需要去微软官方申请）
 			 */
-			request.setHeader("Ocp-Apim-Subscription-Key", KEY);
+			request.setHeader("Ocp-Apim-Subscription-Key", Key);
 
 			File file = new File(filePath);
 
@@ -132,8 +132,7 @@ public class test{
 			if (entity != null) {
 				String result = EntityUtils.toString(entity);
 
-				System.out.println();
-
+				System.out.println(result);
 				return (JSONObject) JSONObject.parse(result);
 			}
 		} catch (Exception e) {
@@ -145,6 +144,8 @@ public class test{
     
     public static void main(String[] args) {
     	// ComputerVision_Url("https://upload.wikimedia.org/wikipedia/commons/1/12/Broadway_and_Times_Square_by_night.jpg");
-    	ComputerVision_Url("http://c.hiphotos.baidu.com/zhidao/pic/item/95eef01f3a292df552ee438eb7315c6034a87378.jpg");
+    	// ComputerVision_Url("http://c.hiphotos.baidu.com/zhidao/pic/item/95eef01f3a292df552ee438eb7315c6034a87378.jpg");
+    	
+    	ComputerVision_Local("C:/Soft/PythonWorkspace/object_detection/timg.jpg");
     }
 }
